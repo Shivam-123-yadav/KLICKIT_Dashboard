@@ -4,6 +4,18 @@ A full-stack job sheet management system for tracking branch-wise work orders, j
 
 ## Overview
 
+
+<img width="1359" height="646" alt="image" src="https://github.com/user-attachments/assets/80267577-63f6-437c-ba40-de64fdbe7c68" />
+
+<img width="1362" height="644" alt="image" src="https://github.com/user-attachments/assets/66fb9e8e-1e12-460c-9bee-7cc46f6a328c" />
+
+<img width="1366" height="650" alt="image" src="https://github.com/user-attachments/assets/cc2a3685-efb4-49ab-bdd4-223b70bc3ca4" />
+
+
+<img width="1366" height="627" alt="image" src="https://github.com/user-attachments/assets/ada135ed-e9f7-4256-aef9-dd67c93bb575" />
+
+<img width="1358" height="646" alt="image" src="https://github.com/user-attachments/assets/803da03e-8b44-4a82-b89c-5586e57f5b15" />
+
 This application is designed to manage and monitor job sheets across multiple branches. It includes:
 
 - Job creation, editing, and deletion
