@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/klickit-logo.png";
+import { isCurrentUserAdmin } from "../utils/auth";
 
 export default function Sidebar({ activePage, branchRows, statusRows, mobileOpen, onCloseMobile }) {
+  const isAdmin = isCurrentUserAdmin();
+
   return (
     <>
       <aside className={`sidebar${mobileOpen ? " is-open" : ""}`} id="sidebar">
@@ -18,13 +21,15 @@ export default function Sidebar({ activePage, branchRows, statusRows, mobileOpen
           >
             <span className="nav__dot"></span> Dashboard
           </Link>
-          <Link
-            className={`nav__item${activePage === "analytics" ? " is-active" : ""}`}
-            to="/analytics"
-            onClick={() => onCloseMobile?.()}
-          >
-            <span className="nav__dot"></span> Analytics
-          </Link>
+          {isAdmin && (
+            <Link
+              className={`nav__item${activePage === "analytics" ? " is-active" : ""}`}
+              to="/analytics"
+              onClick={() => onCloseMobile?.()}
+            >
+              <span className="nav__dot"></span> Analytics
+            </Link>
+          )}
 
           <div className="nav__label">Branches</div>
           <div className="branch-list" id="branchList">
