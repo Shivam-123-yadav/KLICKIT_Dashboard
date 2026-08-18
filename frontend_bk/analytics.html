@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KLICKIT &middot; Analytics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/analytics.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <img class="brand__mark" src="assets/klickit-logo.png" alt="KLICKIT logo" width="60" height="60">
+    </div>
+
+    <nav class="nav">
+      <div class="nav__label">Overview</div>
+      <a class="nav__item" href="index.html">
+        <span class="nav__dot"></span> Dashboard
+      </a>
+      <a class="nav__item is-active" href="analytics.html">
+        <span class="nav__dot"></span> Analytics
+      </a>
+
+      <div class="nav__label">Branches</div>
+      <div class="branch-list" id="branchList"><!-- injected --></div>
+
+      <div class="nav__label">Status Queue</div>
+      <div class="status-list" id="statusList"><!-- injected --></div>
+    </nav>
+
+    <div class="sidebar__foot">
+      <div class="sidebar__foot-row">Andheri &middot; Thane &middot; Dadar &middot; Vashi</div>
+      <div class="sidebar__foot-row muted">info@klickit.co.in</div>
+    </div>
+  </aside>
+
+  <!-- ============ SIDEBAR BACKDROP (Mobile) ============ -->
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <!-- ============ MAIN ============ -->
+  <main class="main">
+
+    <header class="topbar">
+      <button class="icon-btn" id="menuToggle" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+
+      <div class="topbar__title">
+        <h1>Analytics</h1>
+        <p id="topbarSub">Job sheet volume &amp; queue health</p>
+      </div>
+
+      <div class="filterbar__spacer"></div>
+      <div class="chipgroup" id="rangeChips"><!-- injected --></div>
+
+      <div class="topbar__user" id="topbarUser">
+        <span class="topbar__user-label">Signed in as</span>
+        <strong id="currentUsername">User</strong>
+      </div>
+
+      <button class="btn btn--danger" id="logoutBtn" type="button">Logout</button>
+
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light mode">
+        <span class="theme-toggle__icon">☀️</span>
+        <span class="theme-toggle__label">Light mode</span>
+      </button>
+    </header>
+
+    <div class="scroll-area">
+
+      <!-- ============ KPI STRIP ============ -->
+      <section class="kpi-strip" id="kpiStrip"><!-- injected --></section>
+
+      <!-- ============ DIAGNOSTIC TRACE (signature chart) ============ -->
+      <section class="trace-card">
+        <div class="trace-card__head">
+          <div>
+            <p class="trace-card__eyebrow">Intake trace</p>
+            <h2 id="traceTitle">Job sheets logged &middot; last 30 days</h2>
+          </div>
+          <div class="trace-card__readout">
+            <span class="trace-card__readout-dot"></span>
+            <span id="traceSnapshot">Snapshot —</span>
+          </div>
+        </div>
+        <div class="trace-card__scope" id="traceScope"><!-- SVG injected --></div>
+      </section>
+
+      <!-- ============ STATUS + BRANCH ROW ============ -->
+      <section class="split-row">
+
+        <div class="panel-card">
+          <div class="panel-card__head">
+            <p class="panel-card__eyebrow">Status breakdown</p>
+            <h3>Where every job sheet stands</h3>
+          </div>
+          <div class="donut-wrap">
+            <div class="donut-svg-wrap" id="donutWrap"><!-- SVG injected --></div>
+            <div class="donut-legend" id="donutLegend"><!-- injected --></div>
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <div class="panel-card__head">
+            <p class="panel-card__eyebrow">Branch load</p>
+            <h3>Job sheets by location</h3>
+          </div>
+          <div class="branch-bars" id="branchBars"><!-- injected --></div>
+        </div>
+
+      </section>
+
+      <!-- ============ ETA OUTLOOK + REPAIR OUTCOME ROW ============ -->
+      <section class="split-row">
+
+        <div class="panel-card">
+          <div class="panel-card__head">
+            <p class="panel-card__eyebrow">ETA outlook</p>
+            <h3>What's due, and what's overdue</h3>
+          </div>
+          <div class="eta-strip" id="etaStrip"><!-- injected --></div>
+        </div>
+
+        <div class="panel-card">
+          <div class="panel-card__head">
+            <p class="panel-card__eyebrow">Repair outcome</p>
+            <h3>Closed jobs — repaired vs unrepaired</h3>
+          </div>
+          <div class="repair-strip" id="repairStrip"><!-- injected --></div>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<script src="js/analytics.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register | KLICKIT Job Operations</title>
+<link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ================= LEFT: the ticket stub ================= -->
+  <div class="stub">
+
+    <div class="stub-top">
+      <div class="brand">
+        <div class="brand-mark">KJ</div>
+        <div class="brand-text">
+          <div class="brand-name">KLICKIT</div>
+          <div class="brand-sub">Job Operations</div>
+        </div>
+      </div>
+
+      <div class="ticket-id">
+        <div class="label">Work Order</div>
+        <div class="value" id="ticketId">WO-2026-0000</div>
+      </div>
+    </div>
+
+    <div class="stub-mid">
+      <h1 class="stub-headline">Set up your operations account.</h1>
+
+      <p class="stub-copy">
+        Create your branch profile to manage job sheets, receive assignments,
+        track service progress, and coordinate daily operations.
+      </p>
+
+      <div class="route">
+        <div class="route-label">Branch Operations</div>
+        <div class="route-line" id="routeLine"></div>
+      </div>
+    </div>
+
+    <div class="stub-bottom">
+      <div class="stamp stamp-pending" id="stubStamp">
+        Branch Selection Required
+      </div>
+
+      <div class="stub-quote">
+        Organized work.<br>
+        Faster operations.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= RIGHT: the form panel ================= -->
+  <div class="docket">
+    <div class="docket-card">
+
+      <div class="docket-eyebrow">Team Registration</div>
+
+      <h2 class="docket-title">Create your account</h2>
+
+      <p class="docket-sub">
+        Set up your employee profile and branch access to start managing
+        job operations from one centralized workspace.
+      </p>
+
+      <form id="registerForm" novalidate>
+
+        <div id="registerMessage" class="message"></div>
+
+        <div class="field">
+          <div class="field-head">
+            <span class="field-code">F01</span>
+            <label for="username">Employee Username</label>
+          </div>
+
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Choose a username"
+            autocomplete="username"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <div class="field-head">
+            <span class="field-code">F02</span>
+            <label for="email">Work Email</label>
+          </div>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your work email"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="field-row">
+
+          <div class="field">
+            <div class="field-head">
+              <span class="field-code">F03</span>
+              <label for="phone">Phone</label>
+              <span class="field-optional">optional</span>
+            </div>
+
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Phone number"
+              autocomplete="tel"
+            >
+          </div>
+
+          <div class="field">
+            <div class="field-head">
+              <span class="field-code">F04</span>
+              <label for="branch">Branch</label>
+            </div>
+
+            <select id="branch" name="branch" required>
+              <option value="">Select branch</option>
+              <option value="Andheri">Andheri</option>
+              <option value="Thane">Thane</option>
+              <option value="Dadar">Dadar</option>
+              <option value="Vashi">Vashi</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="field">
+          <div class="field-head">
+            <span class="field-code">F05</span>
+            <label for="password">Password</label>
+          </div>
+
+          <div class="field-input-wrap">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Create a secure password"
+              autocomplete="new-password"
+              required
+              minlength="6"
+            >
+
+            <button
+              type="button"
+              class="toggle-visibility"
+              data-target="password"
+              aria-label="Show password"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="field-hint">
+            Use at least 6 characters
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="field-head">
+            <span class="field-code">F06</span>
+            <label for="confirmPassword">Confirm Password</label>
+          </div>
+
+          <div class="field-input-wrap">
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Re-enter your password"
+              autocomplete="new-password"
+              required
+              minlength="6"
+            >
+
+            <button
+              type="button"
+              class="toggle-visibility"
+              data-target="confirmPassword"
+              aria-label="Show password"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="submit-btn"
+          id="registerButton"
+        >
+          <span class="spinner"></span>
+          <span class="btn-label">Create Account</span>
+          <span class="arrow">&rarr;</span>
+        </button>
+
+      </form>
+
+      <div class="docket-footer">
+        Already have an account?
+        <a href="login.html">Sign in to KLICKIT</a>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script src="js/auth.js"></script>
+</body>
+</html>
