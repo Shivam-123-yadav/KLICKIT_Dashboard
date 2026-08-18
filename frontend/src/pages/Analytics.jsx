@@ -10,6 +10,7 @@ import {
   getCurrentUserRole,
   getVisibleBranches,
   isAuthenticated,
+  isCurrentUserAdmin,
   logoutUser,
 } from "../utils/auth";
 import { useTheme } from "../utils/useTheme";
@@ -29,11 +30,17 @@ export default function Analytics() {
   useEffect(() => {
     if (!isAuthenticated()) {
       navigate("/login", { replace: true });
+      return;
+    }
+
+    if (!isCurrentUserAdmin()) {
+      navigate("/", { replace: true });
+      return;
     }
   }, [navigate]);
 
   useEffect(() => {
-    if (!isAuthenticated()) return;
+    if (!isAuthenticated() || !isCurrentUserAdmin()) return;
     (async () => {
       try {
         const data = await fetchJobs();
