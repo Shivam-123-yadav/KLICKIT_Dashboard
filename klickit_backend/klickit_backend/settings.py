@@ -90,9 +90,9 @@ WSGI_APPLICATION = "klickit_backend.wsgi.application"
 DATABASES = {
 'default': {
 'ENGINE': 'django.db.backends.mysql',
-'NAME': 'shivam_db',
-'USER': 'shivam',
-'PASSWORD': 'ShivamPassword123!',
+'NAME': '',
+'USER': '',
+'PASSWORD': '',
 'HOST': 'localhost',
 'PORT': '3306',
 }
