@@ -9,7 +9,8 @@ A full-stack job sheet management system for tracking branch-wise work orders, j
 
 <img width="1362" height="644" alt="image" src="https://github.com/user-attachments/assets/66fb9e8e-1e12-460c-9bee-7cc46f6a328c" />
 
-<img width="1366" height="650" alt="image" src="https://github.com/user-attachments/assets/cc2a3685-efb4-49ab-bdd4-223b70bc3ca4" />
+<img width="1366" height="688" alt="image" src="https://github.com/user-attachments/assets/8faa9d83-a58a-4b6f-be7d-893dadde2d1c" />
+
 
 
 <img width="1365" height="692" alt="image" src="https://github.com/user-attachments/assets/d7beb3b3-db45-4066-8d18-a5b6703dd8fc" />
